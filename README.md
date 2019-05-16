@@ -1,5 +1,5 @@
 # One cycle policy learning rate scheduler
-A PyTorch implementation of one cycle policy proposed in https://arxiv.org/abs/1708.07120.
+A PyTorch implementation of one cycle policy proposed in [Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates](https://arxiv.org/abs/1708.07120).
 
 ## Introduction
 This scheduler consists of three learning rate regimes: 1) upscale period, 2) downscale period, and 3) annihilation period.
