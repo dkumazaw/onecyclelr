@@ -15,7 +15,7 @@ for epoch in range(epochs):
 ```
 
 ## Introduction
-This scheduler consists of three learning rate regimes: 1) upscale period, 2) downscale period, and 3) annihilation period. 
+This scheduler consists of three learning rate regimes: (1) upscale period, (2) downscale period, and (3) annihilation period. 
 
 The figure below shows example values of learning rates and momentums when you use the default values of OneCycleLR. 
 
