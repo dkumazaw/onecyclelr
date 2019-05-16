@@ -4,6 +4,8 @@ A PyTorch implementation of one cycle policy proposed in [Super-Convergence: Ver
 ## Usage
 The implementation has an interface similar to other common learning rate schedulers. 
 ```python
+from onecyclelr import OneCycleLR
+
 optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9)
 scheduler = OneCycleLR(optimizer, num_steps=num_steps, lr_range=(0.1, 1.))
 for epoch in range(epochs):
@@ -17,10 +19,10 @@ This scheduler consists of three learning rate regimes: 1) upscale period, 2) do
 
 The figure below shows example values of learning rates and momentums when you use the default values of OneCycleLR. 
 
-![](example_trajectory.png)
+![](./assets/example_trajectory.png)
 
 The authors of the paper claim that by using this learning rate schedule, the total number of iterations needed until convergence can be reduced significantly; in their experiments, the total numbers of epochs needed to train a ResNet50 on ImageNet can be reduced from **100** to **20**.
 
-![](paper_imagenet.png)
+![](./assets/paper_imagenet.png)
 (Image Credit: https://arxiv.org/abs/1708.07120)
 
