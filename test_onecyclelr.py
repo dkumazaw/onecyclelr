@@ -46,3 +46,9 @@ class TestOneCycleLR(unittest.TestCase):
         assert self.scheduler.last_step == 1000
         assert math.isclose(self.scheduler.get_lr(), 0.001)
         assert math.isclose(self.scheduler.get_momentum(), 0.95)
+
+        # Go beyond the given num of steps: check if it works okay
+        for i in range(50):
+            self.scheduler.step()
+        assert math.isclose(self.scheduler.get_lr(), 0.001)
+        assert math.isclose(self.scheduler.get_momentum(), 0.95)
