@@ -13,12 +13,12 @@ for epoch in range(epochs):
         train(...) 
         scheduler.step()
 ```
+Please see onecyclelr.py for more information.
 
 ## Introduction
-This scheduler consists of three learning rate regimes: (1) upscale period, (2) downscale period, and (3) annihilation period. 
+This scheduler consists of three learning rate/momentum regimes: (1) upscale period, (2) downscale period, and (3) annihilation period. In the upscale period, the learing rate is increased from min_lr to max_lr, while the momentum is reduced from max_momentum to min_momentum. In the downscale period, learning rate and momentum are moved to the opposite direction. Finally, the annihilation period reduces the learning rate down to min_lr * reduce_factor, while the momentum will be kept constant.
 
-The figure below shows example values of learning rates and momentums when you use the default values of OneCycleLR. 
-
+The figure below shows example trajectories of learning rates and momentums when you use the default values of OneCycleLR.  
 ![](./assets/example_trajectory.png)
 
 The authors of the paper claim that by using this learning rate schedule, the total number of iterations needed until convergence can be reduced significantly; in their experiments, the total numbers of epochs needed to train a ResNet50 on ImageNet can be reduced from **100** to **20**.
